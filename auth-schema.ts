@@ -6,7 +6,17 @@ import {
   boolean,
   index,
   uniqueIndex,
+  uuid,
+  varchar,
 } from "drizzle-orm/pg-core";
+
+export const appointmentTable = pgTable("appointments", {
+  appointmentId: uuid("appointment_id").primaryKey().defaultRandom(),
+  appointmentDate: timestamp("booked_date").notNull(),
+  bookedService: varchar("booked_service").notNull(),
+  bookedUserName: text("booked_user_name").references(() => user.name),
+  bookedUserId: text("booked_user_id").references(() => user.id),
+})
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
