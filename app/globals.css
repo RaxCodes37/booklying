@@ -39,3 +39,11 @@ input:focus{
   border-radius: 6px;
   background-color: #3d3b3b;
 }
+
+#auth-nav-bar{
+  background: linear-gradient(to bottom left, #1b1a1a, #383838);
+  padding: 15px;
+  border-bottom: 1px solid var(--element-border);
+  border-radius: 0px 0px 6px 6px;
+  font-size: 1.2rem;
+}

@@ -1,10 +1,13 @@
 import React from 'react'
 import { signInAction } from '../api/auth';
 import SocialSignInButton from '../components/auth/sign-in-button';
+import AuthNavBar from '../components/auth/nav-bar';
 
 export default function page() {
   return (
     <div>
+      <AuthNavBar/>
+
       <div className="flex justify-center">
       <form
         action={signInAction}
