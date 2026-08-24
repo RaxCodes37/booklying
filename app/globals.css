@@ -6,6 +6,7 @@
   --element-color: #474545;
   --element-border: #858c8e;
   --hero-element-color: #fc8787;
+  --hero-element-border: #ad4747;
 }
 
 body {
@@ -52,10 +53,10 @@ input:focus{
   color: var(--hero-element-color);
 }
 
-#home button {
+#home button, .user-settings-button {
   background-color: var(--hero-element-color);
   text-shadow: 1px 1px 1px black;
-  border: 2px solid #ad4747;
+  border: 2px solid var(--hero-element-border);
   font-weight: 600;
   padding: 6px;
   padding-inline: 9px;
@@ -64,4 +65,15 @@ input:focus{
 #home button:hover {
   background-color: #a85454;
   border-color: #fc8787;
+}
+
+.user-settings-button {
+  border-radius: 100%;
+  border-top-right-radius: 0;
+  height: 40px;
+  width: 40px;
+}
+  
+.dropdown:hover .dropdown-content { 
+  display: flex;
 }
