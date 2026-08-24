@@ -5,6 +5,7 @@
   --background: linear-gradient(to bottom left, #101011, #4b4141);
   --element-color: #474545;
   --element-border: #858c8e;
+  --hero-element-color: #fc8787;
 }
 
 body {
@@ -35,8 +36,7 @@ input:focus{
 }
 
 #auth-form input:hover, button:hover {
-  border: 1px solid #646869;
-  border-radius: 6px;
+  border-color: #646869;
   background-color: #3d3b3b;
 }
 
@@ -46,4 +46,21 @@ input:focus{
   border-bottom: 1px solid var(--element-border);
   border-radius: 0px 0px 6px 6px;
   font-size: 1.2rem;
+}
+
+#home span{
+  color: var(--hero-element-color);
+}
+
+#home button {
+  background-color: var(--hero-element-color);
+  border: 2px solid #ad4747;
+  font-weight: 600;
+  padding: 6px;
+  padding-inline: 9px;
+}
+
+#home button:hover {
+  background-color: #a85454;
+  border-color: #fc8787;
 }

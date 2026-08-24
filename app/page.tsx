@@ -1,5 +1,6 @@
 import { getSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
+import HomeClient from "./components/pages/home-page/home-client";
 
 export default async function Home() {
   const session = await getSession();
@@ -8,7 +9,7 @@ export default async function Home() {
 
   return (
     <div>
-      
+      <HomeClient/>
     </div>
   )
 }
