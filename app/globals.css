@@ -1,11 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --foreground: #ffffff;
-  --background: #171717;
+  --text-color: #ffffff;
+  --background: linear-gradient(to bottom left, #101011, #4b4141);
+  --element-color: #474545;
+  --element-border: #858c8e;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text-color);
+}
+
+input:focus{
+  outline: none;
+}
+
+#auth-form {
+  border: 1px solid  #646262;
+  border-radius: 6px;
+  background-color: #373535;
+  min-height: 215px;
+  height: fit-content;
+  box-shadow: 2px 3px 7px black;
+}
+
+#auth-form input, button {
+  box-shadow: 1px 1px 3px black;
+  border: 1px solid var(--element-border);
+  border-radius: 6px;
+  background-color: var(--element-color);
+
+  transition: 0.3s;
+}
+
+#auth-form input:hover, button:hover {
+  border: 1px solid #646869;
+  border-radius: 6px;
+  background-color: #3d3b3b;
 }
