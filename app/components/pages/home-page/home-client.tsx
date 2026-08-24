@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "./footer";
 import Hero from "./hero";
 import Services from "./services";
 
@@ -12,7 +13,9 @@ export default function HomeClient() {
 
       <Services/>
 
-      <hr className="my-20 text-[#595858]"/>
+      <hr className="mt-20 text-[#595858]"/>
+
+      <Footer></Footer>
     </div>
   )
 }
