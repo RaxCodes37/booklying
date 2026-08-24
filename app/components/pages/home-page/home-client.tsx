@@ -9,6 +9,10 @@ export default function HomeClient() {
       <Hero/>
       
       <hr className="my-20 text-[#595858]"/>
+
+      <Services/>
+
+      <hr className="my-20 text-[#595858]"/>
     </div>
   )
 }
