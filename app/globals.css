@@ -49,7 +49,7 @@ input:focus{
   font-size: 1.2rem;
 }
 
-#home, #book span{
+#home span, #book span{
   color: var(--hero-element-color);
 }
 
