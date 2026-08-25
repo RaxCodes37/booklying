@@ -12,7 +12,7 @@ export const services: Services[] = [
   { serviceName: "Eyelash Extensions", serviceDuration: "90 min" },
   { serviceName: "Eyebrow shaping", serviceDuration: "20 min" },
 
-  { serviceName: "Waxing (brow/lip)", serviceDuration: "15 min" },
+  { serviceName: "Waxing (brow or lip)", serviceDuration: "15 min" },
   { serviceName: "Waxing (legs)", serviceDuration: "45 min" },
   { serviceName: "Waxing (bikini)", serviceDuration: "30 min" },
 ];
