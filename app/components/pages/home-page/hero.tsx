@@ -1,7 +1,10 @@
 import { FaUser } from "react-icons/fa6";
 import SignOutButton from "../../auth/sign-out-button";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter()
+
   return (
     <div className="flex flex-col items-center" id="hero">
       <nav className="w-full flex justify-end pr-15 py-5">
@@ -9,7 +12,7 @@ export default function Hero() {
           <FaUser></FaUser>
 
           <div className="dropdown-content hidden absolute mt-20">
-            <SignOutButton/>
+            <SignOutButton />
           </div>
         </div>
       </nav>
@@ -22,7 +25,7 @@ export default function Hero() {
         "Where the <span>style</span> never <span>stops</span>"
       </p>
 
-      <button className="mt-20">Book Here</button>
+      <button className="mt-20" onClick={() => {router.push("/book")}}>Book Here</button>
     </div>
   );
 }
