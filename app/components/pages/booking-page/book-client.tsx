@@ -1,8 +1,11 @@
 "use client";
 
 import { services } from "@/utils/services";
+import { useRouter } from "next/navigation";
 
 export default function BookingClient() {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col items-center" id="book">
       <h1 className="text-4xl font-bold mt-10">
@@ -30,7 +33,14 @@ export default function BookingClient() {
                 {service.serviceName} - <span>{service.serviceDuration}</span>
               </td>
               <td className="duration-300 hover:bg-[#ad4747] hover:border-[#fc8787]">
-                <button>Book</button>
+                <button
+                  onClick={() => {
+                    
+                    router.push(`/booking/${service.serviceName}`);
+                  }}
+                >
+                  Book
+                </button>
               </td>
             </tr>
           ))}
