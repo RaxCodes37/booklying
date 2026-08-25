@@ -49,11 +49,11 @@ input:focus{
   font-size: 1.2rem;
 }
 
-#home span{
+#home, #book span{
   color: var(--hero-element-color);
 }
 
-#home button, .user-settings-button {
+#home button, #book button, .user-settings-button {
   background-color: var(--hero-element-color);
   text-shadow: 1px 1px 1px black;
   border: 2px solid var(--hero-element-border);
@@ -62,7 +62,7 @@ input:focus{
   padding-inline: 9px;
 }
 
-#home button:hover {
+#home button:hover, #book button:hover {
   background-color: #a85454;
   border-color: #fc8787;
 }
