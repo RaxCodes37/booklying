@@ -13,20 +13,23 @@ export default function BookingClient() {
         Our <span>services</span>, Your <span className="underline">pick</span>
       </h2>
 
-      <table className="border border-[#fc8787] w-90 text-center mt-5">
+      <table className="border-3 bg-[#cd6c6c] border-[#a84949] w-90 text-center mt-5">
         <thead>
           <tr className="text-center p-2">
-            <th className="border border-[#fc8787]">Services</th>
-            <th className="p-2 border border-[#fc8787]">Book</th>
+            <th className="border border-[#ff8a8a]">Services</th>
+            <th className="p-2 border border-[#ff8a8a]">Book</th>
           </tr>
         </thead>
         <tbody>
           {services.map((service) => (
-            <tr className="border border-[#fc8787] p-2" key={service.serviceName}>
-              <td className="border border-[#fc8787] p-2">
-                {service.serviceName} - {service.serviceDuration}
+            <tr
+              className="border border-[#ff8a8a] p-2"
+              key={service.serviceName}
+            >
+              <td className="border border-[#ff8a8a] p-2">
+                {service.serviceName} - <span>{service.serviceDuration}</span>
               </td>
-              <td >
+              <td className="duration-300 hover:bg-[#ad4747] hover:border-[#fc8787]">
                 <button>Book</button>
               </td>
             </tr>
