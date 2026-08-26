@@ -16,7 +16,7 @@ export default function BookingClient() {
         Our <span>services</span>, Your <span className="underline">pick</span>
       </h2>
 
-      <table className="border-3 bg-[#cd6c6c] border-[#a84949] w-90 text-center mt-5">
+      <table className="border-3 bg-[#cd6c6c] border-[#a84949] w-80 text-center mt-5">
         <thead>
           <tr className="text-center p-2">
             <th className="border border-[#ff8a8a]">Services</th>
