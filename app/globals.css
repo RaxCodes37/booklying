@@ -105,6 +105,12 @@ span{
   border-radius: 6px;
 }
 
+.react-calendar button{
+  background-color: #616667;
+  box-shadow: none;
+  width: 20px;
+}
+
 .react-calendar__navigation__arrow {
   padding-inline: 10px;
 }
@@ -120,14 +126,14 @@ span{
   color: white;
 }
 
-.react-calendar__month-view__days button{
-  background-color: #616667;
-  box-shadow: none;
-  width: 10px;
+.react-calendar__navigation button {
+  background-color: var(--element-color);
+  border: 1px solid var(--element-border);  
+  box-shadow: 1px 1px 2px black;
+  width: fit-content;
 }
 
 .react-calendar__month-view__days button:hover{
   background-color: #454849;
   box-shadow: none;
-  width: 10px;
 }
