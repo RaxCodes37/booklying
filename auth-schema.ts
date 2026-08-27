@@ -15,8 +15,12 @@ export const appointmentTable = pgTable("appointments", {
   appointmentDate: timestamp("booked_date").notNull(),
   appointmentTime: varchar("booked_time", { length: 5 }).notNull(),
   bookedService: varchar("booked_service").notNull(),
-  bookedUserName: text("booked_user_name").references(() => user.name).notNull(),
-  bookedUserId: text("booked_user_id").references(() => user.id).notNull(),
+  bookedUserName: text("booked_user_name")
+    .references(() => user.name)
+    .notNull(),
+  bookedUserId: text("booked_user_id")
+    .references(() => user.id)
+    .notNull(),
 });
 
 export const user = pgTable("user", {
@@ -101,6 +105,7 @@ export const verification = pgTable(
 export const userRelations = relations(user, ({ many }) => ({
   sessions: many(session),
   accounts: many(account),
+  appointments: many(appointmentTable),
 }));
 
 export const sessionRelations = relations(session, ({ one }) => ({
@@ -114,5 +119,12 @@ export const accountRelations = relations(account, ({ one }) => ({
   user: one(user, {
     fields: [account.userId],
     references: [user.id],
+  }),
+}));
+
+export const appointmentRelations = relations(appointmentTable, ({ one }) => ({
+  user: one(user, {
+    fields: [appointmentTable.bookedUserName, appointmentTable.bookedUserId],
+    references: [user.name, user.id],
   }),
 }));
