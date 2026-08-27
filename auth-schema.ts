@@ -13,10 +13,11 @@ import {
 export const appointmentTable = pgTable("appointments", {
   appointmentId: uuid("appointment_id").primaryKey().defaultRandom(),
   appointmentDate: timestamp("booked_date").notNull(),
+  appointmentTime: varchar("booked_time", { length: 5 }).notNull(),
   bookedService: varchar("booked_service").notNull(),
-  bookedUserName: text("booked_user_name").references(() => user.name),
-  bookedUserId: text("booked_user_id").references(() => user.id),
-})
+  bookedUserName: text("booked_user_name").references(() => user.name).notNull(),
+  bookedUserId: text("booked_user_id").references(() => user.id).notNull(),
+});
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
