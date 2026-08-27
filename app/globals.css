@@ -100,7 +100,8 @@ span{
 
 .react-calendar {
   background-color: #858c8e;
-  padding: 5px;
+  box-shadow: 2px 2px 4px black;
+  padding: 5px 15px 15px 15px;
   border-radius: 6px;
 }
 
@@ -115,6 +116,18 @@ span{
   margin-bottom: 10px;
 }
 
+.react-calendar__navigation span {
+  color: white;
+}
+
 .react-calendar__month-view__days button{
+  background-color: #616667;
+  box-shadow: none;
+  width: 10px;
+}
+
+.react-calendar__month-view__days button:hover{
+  background-color: #454849;
+  box-shadow: none;
   width: 10px;
 }

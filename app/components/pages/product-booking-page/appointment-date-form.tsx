@@ -18,12 +18,13 @@ export default function AppointmentDateForm({ bookedService }: Props) {
 
   return (
     <div className="flex flex-col items-center">
-      <h3 className="text-2xl font-bold mt-10">Choose a date</h3>
+      <h3 className="text-2xl font-bold mt-10">Choose a <span>date</span></h3>
 
       <form
         onClick={() => {
           console.log(appointmentDate);
         }}
+        className="mt-3"
       >
         <Calendar
           value={appointmentDate}
