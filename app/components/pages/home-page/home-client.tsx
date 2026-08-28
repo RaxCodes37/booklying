@@ -6,7 +6,7 @@ import Services from "./services";
 
 export default function HomeClient() {
   return (
-    <div id="home">
+    <div id="home" className="h-[140%]">
       <Hero/>
       
       <hr className="my-20 text-[#595858]"/>

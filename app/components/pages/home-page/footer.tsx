@@ -3,8 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="flex flex-col items-center text-[#848181] mt-5">
-      <p>Example footer</p>
+    <div className="flex flex-col items-end text-[#848181] p-5">
       <div>
         <p className="mt-5">
           <Link
