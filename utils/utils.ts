@@ -11,7 +11,7 @@ export interface Services {
 
 export const bookServiceAppointment = async (
   bookedService: string,
-  appointmentDate: Date,
+  appointmentDate: string,
   appointmentTime: string,
   bookedUserName: string,
   bookedUserId: string,
@@ -19,7 +19,7 @@ export const bookServiceAppointment = async (
   const checkAvailability = await db
     .select()
     .from(appointmentTable)
-    .where(and(eq(appointmentTable.appointmentDate, appointmentDate), eq(appointmentTable.appointmentTime, appointmentTime)));
+    .where(eq(appointmentTable.appointmentDate, appointmentDate));
 
   let message: string;
 

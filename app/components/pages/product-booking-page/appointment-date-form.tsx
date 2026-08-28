@@ -11,19 +11,21 @@ interface Props {
   userId: string;
 }
 
-type Appointment = Date;
+type Appointment = string;
 
-type AppointmentValue = Appointment | [Appointment, Appointment];
-
-export default function AppointmentDateForm({ bookedService, userName, userId }: Props) {
-  const [appointmentDate, setAppointmentDate] = useState<Date>(
-    new Date(),
+export default function AppointmentDateForm({
+  bookedService,
+  userName,
+  userId,
+}: Props) {
+  const [appointmentDate, setAppointmentDate] = useState<string>(() =>
+    new Date().toISOString().slice(0, 10),
   );
   const [appointmentTime, setAppointmentTime] = useState<string>("");
   const [showCalendar, setShowCalendar] = useState<string>("flex");
   const [showTime, setShowTime] = useState<string>("hidden");
-  const [message, setMessage] = useState<string>("")
-  const [showMessage, setShowMessage] = useState<string>("hidden")
+  const [message, setMessage] = useState<string>("");
+  const [showMessage, setShowMessage] = useState<string>("hidden");
 
   const navigateBooking = () => {
     if (showCalendar === "flex") {
@@ -38,12 +40,13 @@ export default function AppointmentDateForm({ bookedService, userName, userId }:
 
   const bookService = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     try {
+      console.log(appointmentDate);
       setMessage(await bookServiceAppointment(bookedService, appointmentDate, appointmentTime, userName, userId));
       setShowMessage("block")
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   };
 
@@ -57,7 +60,11 @@ export default function AppointmentDateForm({ bookedService, userName, userId }:
         <form onClick={navigateBooking} className="mt-3">
           <Calendar
             value={appointmentDate}
-            onChange={() => setAppointmentDate}
+            onChange={(e) => {
+              const d = e as Date;
+              const formatted = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+              setAppointmentDate(formatted);
+            }}
             className="calendar"
           ></Calendar>
         </form>
@@ -69,10 +76,7 @@ export default function AppointmentDateForm({ bookedService, userName, userId }:
         </h3>
 
         <div className="mt-6 bg-[#858c8e] text-center p-3 rounded-md">
-          <form
-            onSubmit={bookService}
-            className=" flex flex-col"
-          >
+          <form onSubmit={bookService} className=" flex flex-col">
             <input
               type="time"
               value={appointmentTime}
@@ -86,7 +90,9 @@ export default function AppointmentDateForm({ bookedService, userName, userId }:
               Book
             </button>
           </form>
-          <button className="mt-4 px-2" onClick={navigateBooking}>Back</button>
+          <button className="mt-4 px-2" onClick={navigateBooking}>
+            Back
+          </button>
         </div>
       </div>
 
