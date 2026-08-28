@@ -1,0 +1,1 @@
+ALTER TABLE "appointments" ALTER COLUMN "booked_date" SET DATA TYPE varchar(10);
