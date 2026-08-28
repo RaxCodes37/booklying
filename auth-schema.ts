@@ -12,7 +12,7 @@ import {
 
 export const appointmentTable = pgTable("appointments", {
   appointmentId: uuid("appointment_id").primaryKey().defaultRandom(),
-  appointmentDate: timestamp("booked_date").notNull(),
+  appointmentDate: varchar("booked_date", { length: 10 }).notNull(),
   appointmentTime: varchar("booked_time", { length: 5 }).notNull(),
   bookedService: varchar("booked_service").notNull(),
   bookedUserName: text("booked_user_name")
