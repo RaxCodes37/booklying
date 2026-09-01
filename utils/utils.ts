@@ -19,7 +19,7 @@ export const bookServiceAppointment = async (
   const checkAvailability = await db
     .select()
     .from(appointmentTable)
-    .where(eq(appointmentTable.appointmentDate, appointmentDate));
+    .where(and(eq(appointmentTable.appointmentDate, appointmentDate), eq(appointmentTable.appointmentTime, appointmentTime)));
 
   let message: string;
 

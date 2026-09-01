@@ -11,8 +11,6 @@ interface Props {
   userId: string;
 }
 
-type Appointment = string;
-
 export default function AppointmentDateForm({
   bookedService,
   userName,
@@ -42,9 +40,17 @@ export default function AppointmentDateForm({
     e.preventDefault();
 
     try {
-      console.log(appointmentDate);
-      setMessage(await bookServiceAppointment(bookedService, appointmentDate, appointmentTime, userName, userId));
-      setShowMessage("block")
+      setMessage(
+        await bookServiceAppointment(
+          bookedService,
+          appointmentDate,
+          appointmentTime,
+          userName,
+          userId,
+        ),
+      );
+
+      setShowMessage("block");
     } catch (error) {
       console.error(error);
     }
